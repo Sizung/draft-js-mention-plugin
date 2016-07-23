@@ -10,14 +10,11 @@ export default class Entry extends Component {
     this.mouseDown = false;
   }
 
-  componentWillReceiveProps(properties) {
-    if (properties.scrollMention) {
-      this.refs.entry.scrollIntoView(false);
-    }
-  }
-
   componentDidUpdate() {
     this.mouseDown = false;
+    if (this.props.scrollMention) {
+      this.refs.entry.scrollIntoView(false);
+    }
   }
 
   onMouseUp = () => {

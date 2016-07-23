@@ -281,7 +281,7 @@ export default class MentionSuggestions extends Component {
               onMentionSelect={this.onMentionSelect}
               onMentionFocus={this.onMentionFocus}
               isFocused={this.state.focusedOptionIndex === index}
-              scrollMention={this.state.scrollMention}
+              scrollMention={this.state.focusedOptionIndex === index && this.state.scrollMention}
               mention={mention}
               index={index}
               id={`mention-option-${this.key}-${index}`}
