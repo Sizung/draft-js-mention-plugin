@@ -11,7 +11,7 @@ export default class Entry extends Component {
   }
 
   componentWillReceiveProps(properties) {
-    if (properties.isFocused && !this.props.isFocused) {
+    if (properties.scrollMention && !this.props.scrollMention) {
       this.refs.entry.scrollIntoView(false);
     }
   }
