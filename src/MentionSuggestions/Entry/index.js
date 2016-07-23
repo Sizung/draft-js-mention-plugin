@@ -10,6 +10,12 @@ export default class Entry extends Component {
     this.mouseDown = false;
   }
 
+  componentWillReceiveProps(properties) {
+    if (properties.isFocused && !this.props.isFocused) {
+      this.refs.entry.scrollIntoView();
+    }
+  }
+
   componentDidUpdate() {
     this.mouseDown = false;
   }
@@ -37,6 +43,7 @@ export default class Entry extends Component {
     const className = this.props.isFocused ? theme.mentionSuggestionsEntryFocused : theme.mentionSuggestionsEntry;
     return (
       <div
+        ref="entry"
         className={className}
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
