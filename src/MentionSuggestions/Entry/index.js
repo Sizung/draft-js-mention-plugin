@@ -12,7 +12,7 @@ export default class Entry extends Component {
 
   componentWillReceiveProps(properties) {
     if (properties.isFocused && !this.props.isFocused) {
-      this.refs.entry.scrollIntoView();
+      this.refs.entry.scrollIntoView(false);
     }
   }
 
